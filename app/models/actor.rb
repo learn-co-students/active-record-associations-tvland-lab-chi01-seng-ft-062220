@@ -8,7 +8,6 @@ class Actor < ActiveRecord::Base
     end
 
     def list_roles
-        characters_and_shows = []
         search = Character.where(actor_id: self.id) 
         search.map{|info| "#{info.name} - #{info.show.name}"}
     end
